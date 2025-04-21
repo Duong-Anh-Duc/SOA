@@ -2,7 +2,9 @@
 
 I. Giới thiệu thành viên:
 Dương Anh Đức - B21DCCN239
+
 Trần Trọng Việt - B21DCCN791
+
 Trần Trung Kiên - B21DCCN467
 
 II. Giới thiệu đề tài:
