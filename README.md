@@ -65,6 +65,7 @@ IV. Phân tích
      Bước 9: Người dùng nhấn xác nhận để tạo công việc mới.
    
      Bước 10:
+   
        + Hệ thống lưu thông tin công việc và danh sách người thực hiện vào cơ sở dữ liệu.
        
        + Nếu lưu thành công, chuyển sang bước 11.
