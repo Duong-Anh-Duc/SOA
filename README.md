@@ -1,13 +1,15 @@
 ĐỀ TÀI: HỆ THỐNG LÀM BÀI TRẮC NGHIỆM
 
 I. Giới thiệu thành viên:
-Dương Anh Đức - B21DCCN239
 
-Trần Trọng Việt - B21DCCN791
+• Dương Anh Đức - B21DCCN239
 
-Trần Trung Kiên - B21DCCN467
+• Trần Trọng Việt - B21DCCN791
+
+• Trần Trung Kiên - B21DCCN467
 
 II. Giới thiệu đề tài:
+
 Hệ thống tạo và giao việc cho phép quản trị viên trong một nhóm (team) tạo công việc, gán người thực hiện và lưu trữ thông tin công việc vào cơ sở dữ liệu. Người dùng phải có quyền quản trị viên trong team để thực hiện thao tác này. Sau khi công việc được tạo thành công, hệ thống sẽ gửi thông báo đến những người được giao việc.
 
-Usecase: Tạo và giao công việc mới khi nhận được yêu cầu từ quản trị viên.
+•Usecase: Tạo và giao công việc mới khi nhận được yêu cầu từ quản trị viên.
