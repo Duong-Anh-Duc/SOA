@@ -31,3 +31,38 @@ III. Công nghệ sử dụng:
 • API Gateway : NestJS Gateway
 
 • Authentication : JWT (JSON Web Token)
+
+IV. Phân tích
+
+1. Quy trình tạo và giao công việc
+   
+   Quy trình tạo và giao công việc bao gồm các bước chi tiết sau:
+   
+   Bước 1: Người dùng truy cập vào team mà họ muốn tạo và giao công việc.
+
+  Bước 2: Hệ thống kiểm tra quyền của người dùng trong team.
+
+  Bước 3:
+    + Nếu người dùng có quyền quản trị viên, chuyển sang bước 4.
+    + Nếu không có quyền quản trị viên, kết thúc quy trình và thông báo lỗi.
+
+  Bước 4: Người dùng chọn tùy chọn để bắt đầu tạo công việc mới.
+
+  Bước 5: Hệ thống hiển thị giao diện nhập thông tin công việc.
+
+  Bước 6: Người dùng nhập thông tin công việc gồm: tiêu đề, mô tả, thời hạn hoàn thành.
+
+  Bước 7: Người dùng bắt đầu tạo danh sách người thực hiện công việc.
+
+  Bước 8:
+    + Hệ thống truy xuất và hiển thị danh sách thành viên trong team.
+    + Người dùng chọn các thành viên từ danh sách để giao việc.
+
+  Bước 9: Người dùng nhấn xác nhận để tạo công việc mới.
+
+  Bước 10:
+    + Hệ thống lưu thông tin công việc và danh sách người thực hiện vào cơ sở dữ liệu.
+    + Nếu lưu thành công, chuyển sang bước 11.
+    + Nếu lưu thất bại, quay lại bước 4.
+
+  Bước 11: Hệ thống gửi thông báo đến từng người được giao công việc (qua email hoặc thông báo trong ứng dụng).
