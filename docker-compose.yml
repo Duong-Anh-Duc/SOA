@@ -1,0 +1,72 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: SOA
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5434:5434"
+
+  task-service:
+    build: ./services/task-service
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+  task-creation-service:
+    build: ./services/task-creation-service
+    ports:
+      - "3002:3002"
+    depends_on:
+      - task-service
+      - user-service
+      - validation-service
+      - notification-service
+
+  team-service:
+    build: ./services/team-service
+    ports:
+      - "3003:3003"
+    depends_on:
+      - db
+      - user-service
+
+  user-service:
+    build: ./services/user-service
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
+
+  validation-service:
+    build: ./services/validation-service
+    ports:
+      - "3004:3004"
+    depends_on:
+      - user-service
+      - team-service
+
+  notification-service:
+    build: ./services/notification-service
+    ports:
+      - "3005:3005"
+
+  gateway:
+    build: ./services/gateway
+    ports:
+      - "3006:3006"
+    depends_on:
+      - task-service
+      - task-creation-service
+      - team-service
+      - user-service
+      - validation-service
+      - notification-service
+
+volumes:
+  db-data:

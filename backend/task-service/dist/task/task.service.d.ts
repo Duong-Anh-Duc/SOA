@@ -1,0 +1,90 @@
+import { Repository } from 'typeorm';
+import { CreateTaskDto } from './dto/create-task.dto';
+import { Task, TaskPriority, TaskStatus } from './entities/task.entity';
+export declare class TaskService {
+    private taskRepository;
+    constructor(taskRepository: Repository<Task>);
+    handleCreateTask(data: any): Promise<Task>;
+    handleUndefinedPattern(data: any): Promise<{
+        success: boolean;
+        message: string;
+    }>;
+    handleTestHandler(data: any): Promise<{
+        success: boolean;
+        message: string;
+    }>;
+    create(createTaskDto: CreateTaskDto): Promise<Task>;
+    findAll(): Promise<{
+        createdBy: any;
+        assignees: any;
+        team: any;
+        id: number;
+        title: string;
+        description: string;
+        deadline: Date;
+        status: TaskStatus;
+        priority: TaskPriority;
+        startDate: Date;
+        createdAt: Date;
+        updatedAt: Date;
+        createdById: number;
+        assigneeIds: number[];
+        teamId: number;
+        attachments: string[];
+    }[]>;
+    findByTeam(teamId: number): Promise<{
+        createdBy: any;
+        assignees: any;
+        team: any;
+        id: number;
+        title: string;
+        description: string;
+        deadline: Date;
+        status: TaskStatus;
+        priority: TaskPriority;
+        startDate: Date;
+        createdAt: Date;
+        updatedAt: Date;
+        createdById: number;
+        assigneeIds: number[];
+        teamId: number;
+        attachments: string[];
+    }[]>;
+    findByTeamAndUser(teamId: number, userId: number): Promise<{
+        createdBy: any;
+        assignees: any;
+        team: any;
+        id: number;
+        title: string;
+        description: string;
+        deadline: Date;
+        status: TaskStatus;
+        priority: TaskPriority;
+        startDate: Date;
+        createdAt: Date;
+        updatedAt: Date;
+        createdById: number;
+        assigneeIds: number[];
+        teamId: number;
+        attachments: string[];
+    }[]>;
+    findOne(id: number): Promise<{
+        createdBy: any;
+        assignees: any;
+        team: any;
+        id: number;
+        title: string;
+        description: string;
+        deadline: Date;
+        status: TaskStatus;
+        priority: TaskPriority;
+        startDate: Date;
+        createdAt: Date;
+        updatedAt: Date;
+        createdById: number;
+        assigneeIds: number[];
+        teamId: number;
+        attachments: string[];
+    }>;
+    private enrichTask;
+}
